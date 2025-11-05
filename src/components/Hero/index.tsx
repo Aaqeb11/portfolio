@@ -25,7 +25,7 @@ const Hero = () => {
           {/* Main Heading */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-              Hi, I'm{" "}
+              Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
                 Aaqeb Ahmed
               </span>
@@ -33,7 +33,7 @@ const Hero = () => {
 
             {/* Typewriter Effect */}
             <div className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-300">
-              <span className="text-gray-400">I'm a </span>
+              <span className="text-gray-400">I&apos;m a </span>
               <TextType
                 text={[
                   "Full Stack Developer",
