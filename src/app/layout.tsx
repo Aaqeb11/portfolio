@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Galaxy from "../components/Galaxy";
+import Particles from "../components/Particles";
 
 const epundaz = localFont({
   src: [
@@ -30,7 +32,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={epundaz.className} style={{ backgroundColor: "black" }}>
-        {children}
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <Particles
+            className=""
+            particleColors={["#ffffff", "#ffffff"]}
+            particleCount={400}
+            particleSpread={20}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
+          />
+        </div>
+        <div className="">{children}</div>
       </body>
     </html>
   );
