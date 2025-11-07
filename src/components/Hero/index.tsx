@@ -72,9 +72,11 @@ const Hero = () => {
           enableTilt={true}
           enableMobileTilt={false}
           onContactClick={() => "mailto:aaqebahmed@gmail.com"}
-          behindGradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
           innerGradient="linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)"
           miniAvatarUrl="./me.png"
+          grainUrl=""
+          behindGlowColor={""}
+          behindGlowSize={""}
         />
       </div>
     </div>
