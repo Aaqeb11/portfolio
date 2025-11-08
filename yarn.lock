@@ -2741,6 +2741,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lenis@npm:^1.3.14":
+  version: 1.3.14
+  resolution: "lenis@npm:1.3.14"
+  peerDependencies:
+    "@nuxt/kit": ">=3.0.0"
+    react: ">=17.0.0"
+    vue: ">=3.0.0"
+  peerDependenciesMeta:
+    "@nuxt/kit":
+      optional: true
+    react:
+      optional: true
+    vue:
+      optional: true
+  checksum: 10c0/0314f839eadc40d165bd314bbd1da2a41df671c3ff275757d9b21f59e68560641cea2b5c59b67d3a7ef0cf7f36f805c464f1fd2703ad4db42b211c13f155be22
+  languageName: node
+  linkType: hard
+
 "levn@npm:^0.4.1":
   version: 0.4.1
   resolution: "levn@npm:0.4.1"
@@ -2885,6 +2903,15 @@ __metadata:
   bin:
     loose-envify: cli.js
   checksum: 10c0/655d110220983c1a4b9c0c679a2e8016d4b67f6e9c7b5435ff5979ecdb20d0813f4dec0a08674fcbdd4846a3f07edbb50a36811fd37930b94aaa0d9daceb017e
+  languageName: node
+  linkType: hard
+
+"lucide-react@npm:^0.553.0":
+  version: 0.553.0
+  resolution: "lucide-react@npm:0.553.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/b1283f1a2302a50d6a16bd67b9f7417ae08a74cba59ae5ca9953527cb9724247df12ba8c72ca2fc6a70b745f8315cc709ac7573643c4088728766da151999ef6
   languageName: node
   linkType: hard
 
@@ -3303,6 +3330,8 @@ __metadata:
     eslint: "npm:^9"
     eslint-config-next: "npm:15.5.2"
     gsap: "npm:^3.13.0"
+    lenis: "npm:^1.3.14"
+    lucide-react: "npm:^0.553.0"
     motion: "npm:^12.23.24"
     next: "npm:^15.5.2"
     ogl: "npm:^1.0.11"

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Galaxy from "../components/Galaxy";
-import Particles from "../components/Particles";
+import Galaxy from "../components/ui/Galaxy";
+import Particles from "../components/ui/Particles";
 
 const epundaz = localFont({
   src: [

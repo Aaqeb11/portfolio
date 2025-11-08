@@ -1,8 +1,8 @@
 "use client";
 import * as React from "react";
-import TextType from "../TextType";
-import Particles from "../Particles";
-import ProfileCard from "../ProfileCard";
+import TextType from "../ui/TextType";
+import Particles from "../ui/Particles";
+import ProfileCard from "../ui/ProfileCard";
 
 const Hero = () => {
   return (

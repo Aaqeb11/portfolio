@@ -1,4 +1,4 @@
-import ChromaGrid from "../ChromaGrid";
+import ChromaGrid from "../ui/ChromaGrid";
 
 const techStackItems = [
   {
