@@ -11,7 +11,47 @@ import {
   PackageOpen,
   Layout,
 } from "lucide-react";
-const projects = [
+import { ReactElement } from "react";
+
+export type ProjectLinks = {
+  npm?: string;
+  github?: string;
+};
+
+export type ProjectDetails = {
+  overview: string;
+  features: string[];
+  useCases?: string[];  // Mark optional if some projects miss them
+  pipeline?: string[];
+  advantages?: string[];
+  performance?: string[];
+  bots?: Array<{
+    name: string;
+    description: string;
+    features: string[];
+  }>;
+  impact?: string[];
+  services?: string[];
+  architecture?: string[];
+  adapters?: string[];
+  benefits?: string[];
+  aiPipeline?: string[];
+};
+
+export type Project = {
+  id: number;
+  title: string;
+  category: string;
+  icon: ReactElement;
+  summary: string;
+  image: string;
+  links: ProjectLinks;
+  tech: string[];
+  details: ProjectDetails;
+};
+
+
+const projects: Project[] = [
   {
     id: 1,
     title: "Component Dock",

@@ -8,8 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import projects from "@/lib/data/projectDetails";
-import { useScroll, motion, useTransform } from "motion/react";
+import projects, { Project } from "@/lib/data/projectDetails";
+import { useScroll, motion, useTransform, MotionValue } from "motion/react";
 import Image from "next/image";
 
 const ProjectCard = ({
@@ -19,11 +19,11 @@ const ProjectCard = ({
   range,
   targetScale,
 }: {
-  project: any;
+  project: Project;
   i: number;
-  progress: any;
-  range: any;
-  targetScale: any;
+  progress: MotionValue<number>;
+  range: [number, number];
+  targetScale: number | MotionValue<number>;
 }) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
