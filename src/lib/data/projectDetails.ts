@@ -14,14 +14,15 @@ import {
 import { ReactElement } from "react";
 
 export type ProjectLinks = {
+  live?: string;
   npm?: string;
   github?: string;
 };
 
 export type ProjectDetails = {
   overview: string;
-  features: string[];
-  useCases?: string[];  // Mark optional if some projects miss them
+  features?: string[];
+  useCases?: string[]; // Mark optional if some projects miss them
   pipeline?: string[];
   advantages?: string[];
   performance?: string[];
@@ -42,7 +43,7 @@ export type Project = {
   id: number;
   title: string;
   category: string;
-  icon: ReactElement;
+  icon?: ReactElement;
   summary: string;
   image: string;
   links: ProjectLinks;
@@ -50,13 +51,11 @@ export type Project = {
   details: ProjectDetails;
 };
 
-
 const projects: Project[] = [
   {
     id: 1,
     title: "Component Dock",
     category: "CLI Tool",
-    icon: <PackageOpen className="w-6 h-6" />,
     summary:
       "A powerful CLI tool that streamlines the creation of modern React component libraries with zero configuration.",
     image:
@@ -88,7 +87,6 @@ const projects: Project[] = [
     id: 2,
     title: "Advanced RAG Email Classification",
     category: "AI/ML System",
-    icon: <Bot className="w-6 h-6" />,
     summary:
       "Sophisticated Retrieval-Augmented Generation solution for intelligent email classification using the FLARE approach.",
     image:
@@ -119,7 +117,6 @@ const projects: Project[] = [
     id: 3,
     title: "Graph RAG Email Processing MVP",
     category: "AI/ML System",
-    icon: <Layout className="w-6 h-6" />,
     summary:
       "Extended email classification with Graph RAG capabilities, introducing relationship-aware processing for sophisticated email understanding.",
     image:
@@ -148,7 +145,6 @@ const projects: Project[] = [
     id: 4,
     title: "CDC Pipeline with Debezium & Kafka",
     category: "Data Engineering",
-    icon: <Database className="w-6 h-6" />,
     summary:
       "Robust Change Data Capture solution for real-time data synchronization and event streaming using Debezium and Apache Kafka.",
     image:
@@ -184,7 +180,6 @@ const projects: Project[] = [
     id: 5,
     title: "n8n Automation & Slack Bots",
     category: "Automation",
-    icon: <Zap className="w-6 h-6" />,
     summary:
       "Comprehensive automation workflows including PR notifiers, reminder bots, and intelligent blocker tracking with automatic ticket creation.",
     image:
@@ -239,7 +234,6 @@ const projects: Project[] = [
     id: 6,
     title: "Production Infrastructure Management",
     category: "DevOps",
-    icon: <Server className="w-6 h-6" />,
     summary:
       "Comprehensive production infrastructure for internal developer platform, deploying multiple self-hosted open-source solutions.",
     image:
@@ -277,7 +271,6 @@ const projects: Project[] = [
     id: 7,
     title: "Standalone Error Handling Package",
     category: "Library",
-    icon: <Code className="w-6 h-6" />,
     summary:
       "Framework-agnostic error handling library with specialized adapters for Axios, NestJS, and Prisma.",
     image:
@@ -311,7 +304,6 @@ const projects: Project[] = [
     id: 8,
     title: "NoteWiz - AI Education Platform",
     category: "EdTech",
-    icon: <GraduationCap className="w-6 h-6" />,
     summary:
       "AI-powered education platform with contextual chatbots, automated flashcard generation, and adaptive quizzes with gamification.",
     image:
