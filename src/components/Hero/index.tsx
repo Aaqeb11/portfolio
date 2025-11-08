@@ -3,6 +3,7 @@ import * as React from "react";
 import TextType from "../ui/TextType";
 import Particles from "../ui/Particles";
 import ProfileCard from "../ui/ProfileCard";
+import "./Hero.css";
 
 const Hero = () => {
   return (
@@ -11,20 +12,20 @@ const Hero = () => {
         <Particles
           className=""
           particleColors={["#ffffff", "#ffffff"]}
-          particleCount={400}
-          particleSpread={20}
+          particleCount={200}
+          particleSpread={30}
           speed={0.1}
-          particleBaseSize={100}
+          particleBaseSize={50}
           moveParticlesOnHover={true}
           alphaParticles={false}
           disableRotation={false}
         />
       </div>
-      <div className=" flex flex-col md:flex-row gap-12 items-center">
+      <div className=" flex flex-col md:flex-row pt-8 md:pt-0 gap-12 items-center">
         <div className="text-center space-y-8 z-10 relative">
           {/* Main Heading */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight">
               Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
                 Aaqeb Ahmed
@@ -56,10 +57,18 @@ const Hero = () => {
           </div>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed px-4">
+          <p className="text-lg md:text-xl text-[#a9a9bd] tracking-wide max-w-2xl mx-auto leading-relaxed px-4">
             Crafting exceptional digital experiences with modern technologies
             and innovative solutions. Where others stumble, I engineer solutions
           </p>
+
+          {/* Action btn */}
+          <button className="btn ring-offset-background focus-visible:ring-highlight-primary whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 btn__outline" type="button" aria-disabled="false">
+            <span className="btn__ripple"></span>
+            <span className="block overflow-hidden">
+              <span className="btn__text" data-attr="My Resume">My Resume</span>
+              </span>
+          </button>
         </div>
         <ProfileCard
           name="Software Developer"

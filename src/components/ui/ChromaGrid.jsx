@@ -138,7 +138,7 @@ export const ChromaGrid = ({
       className={`chroma-grid ${className}`}
       style={{
         "--r": `${radius}px`,
-        "--cols": columns,
+        // "--cols": columns,
         "--rows": rows,
         gap: gap,
       }}
