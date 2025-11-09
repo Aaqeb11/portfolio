@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={epundaz.className} style={{ backgroundColor: "black" }}>
+      <body className={epundaz.className} style={{ backgroundColor: "black", overflowX: "hidden" }}>
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Particles
             className=""
