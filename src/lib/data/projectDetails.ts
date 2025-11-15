@@ -189,6 +189,15 @@ const projects: Project[] = [
     details: {
       overview:
         "Developed comprehensive automation solutions using n8n (workflow automation platform) to streamline development operations and team communication. Created multiple intelligent Slack bots that enhance productivity and maintain code quality standards.",
+      features: [
+        "Real-time Automation: GitHub → Slack notifications without delay",
+        "Multi-Bot System: Separate bots for PRs, reminders, and blockers",
+        "Workflow Triggers: Responds to GitHub events, Slack messages, and DB updates",
+        "Rich Slack Messages: Sends formatted updates with links, stats, and context",
+        "Auto Ticketing: Creates Linear/Jira tickets based on Slack conversations",
+        "Status Sync: Keeps Slack threads updated with ticket progress",
+        "Channel Routing: Sends updates to specific teams or repos automatically",
+      ],
       bots: [
         {
           name: "PR-Notifier Bot",

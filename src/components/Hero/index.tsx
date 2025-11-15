@@ -1,26 +1,12 @@
 "use client";
 import * as React from "react";
 import TextType from "../ui/TextType";
-import Particles from "../ui/Particles";
 import ProfileCard from "../ui/ProfileCard";
 import "./Hero.css";
 
 const Hero = () => {
   return (
     <div className="w-screen h-screen flex items-center justify-center ">
-      <div className="absolute inset-0 z-0">
-        <Particles
-          className=""
-          particleColors={["#ffffff", "#ffffff"]}
-          particleCount={200}
-          particleSpread={30}
-          speed={0.1}
-          particleBaseSize={50}
-          moveParticlesOnHover={true}
-          alphaParticles={false}
-          disableRotation={false}
-        />
-      </div>
       <div className=" flex flex-col md:flex-row pt-8 md:pt-0 gap-12 items-center">
         <div className="text-center space-y-8 z-10 relative">
           {/* Main Heading */}
