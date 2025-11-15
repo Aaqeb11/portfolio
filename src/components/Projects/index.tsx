@@ -30,7 +30,6 @@ const ProjectCard = ({
     target: container,
     offset: ["start end", "start start"],
   });
-
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
 
@@ -46,35 +45,42 @@ const ProjectCard = ({
         }}
         className="relative"
       >
-        <Card className="w-[60vw] h-[500px] bg-red-400 rounded-3xl flex flex-row p-12">
-          <div className="w-1/2 flex flex-col">
-            <CardHeader className="p-0">
-              <CardTitle className="text-center text-3xl mb-8">
-                {project.title}
-              </CardTitle>
-            </CardHeader>
-            <CardDescription className="text-base mt-8">
-              {project.summary}
-            </CardDescription>
-          </div>
-
-          <CardContent className="w-1/2 flex items-center justify-center p-0 pl-12">
-            <div className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
-              <motion.div
-                style={{ scale: imageScale }}
-                className="relative w-full h-full"
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={500}
-                  height={400}
-                  className="object-cover w-full h-full rounded-2xl"
-                />
-              </motion.div>
+        <div className="p-2 border-blue-300 w-[60vw] h-[500px]">
+          <Card
+            className="w-[60vw] h-[500px] bg-transparent rounded-3xl flex flex-row p-12 backdrop-blur-3xl"
+            style={{
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+            }}
+          >
+            <div className="w-1/2 flex flex-col">
+              <CardHeader className="p-0">
+                <CardTitle className="text-center text-3xl mb-8 text-white">
+                  {project.title}
+                </CardTitle>
+              </CardHeader>
+              <CardDescription className="text-base mt-8 text-white">
+                {project.summary}
+              </CardDescription>
             </div>
-          </CardContent>
-        </Card>
+            <CardContent className="w-1/2 flex items-center justify-center p-0 pl-12">
+              <div className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
+                <motion.div
+                  style={{ scale: imageScale }}
+                  className="relative w-full h-full"
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={500}
+                    height={400}
+                    className="object-cover w-full h-full rounded-2xl"
+                  />
+                </motion.div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </motion.div>
     </div>
   );
