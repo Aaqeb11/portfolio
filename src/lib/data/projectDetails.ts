@@ -58,8 +58,7 @@ const projects: Project[] = [
     category: "CLI Tool",
     summary:
       "A powerful CLI tool that streamlines the creation of modern React component libraries with zero configuration.",
-    image:
-      "/ComponentDock.png",
+    image: "/ComponentDock.png",
     links: {
       npm: "https://www.npmjs.com/package/@aaqeb11/component-dock",
       github: "https://github.com/Aaqeb11/component-dock",
@@ -89,8 +88,7 @@ const projects: Project[] = [
     category: "AI/ML System",
     summary:
       "Sophisticated Retrieval-Augmented Generation solution for intelligent email classification using the FLARE approach.",
-    image:
-      "/AdvancedRAGEmailClassification.png",
+    image: "/AdvancedRAGEmailClassification.png",
     links: {},
     tech: ["Python", "Vector DB", "PostgreSQL", "LLM", "FLARE"],
     details: {
@@ -113,42 +111,41 @@ const projects: Project[] = [
       ],
     },
   },
+  // {
+  //   id: 3,
+  //   title: "Graph RAG Email Processing MVP",
+  //   category: "AI/ML System",
+  //   summary:
+  //     "Extended email classification with Graph RAG capabilities, introducing relationship-aware processing for sophisticated email understanding.",
+  //   image:
+  //     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+  //   links: {},
+  //   tech: ["Neo4j", "NER", "Graph Database", "RAG", "Python"],
+  //   details: {
+  //     overview:
+  //       "Extended the email classification system with Graph RAG capabilities, introducing relationship-aware processing that understands connections between emails, senders, and topics. This MVP demonstrates advanced knowledge graph integration for more sophisticated email understanding.",
+  //     features: [
+  //       "Knowledge Graph: Maps relationships between emails, creating a comprehensive network",
+  //       "Thread Awareness: Maintains conversation context across email chains",
+  //       "Entity Recognition: Identifies people, projects, and organizations",
+  //       "Temporal Analysis: Tracks how topics evolve over time",
+  //       "Multi-hop Reasoning: Discovers indirect relationships between emails",
+  //     ],
+  //     advantages: [
+  //       "Understands email threads and conversation context",
+  //       "Identifies patterns across multiple communications",
+  //       "Enables complex queries across related emails",
+  //       "Combines graph context with vector similarity for enhanced accuracy",
+  //     ],
+  //   },
+  // },
   {
     id: 3,
-    title: "Graph RAG Email Processing MVP",
-    category: "AI/ML System",
-    summary:
-      "Extended email classification with Graph RAG capabilities, introducing relationship-aware processing for sophisticated email understanding.",
-    image:
-      "/GraphRAGEmailProcessingMVP.png",
-    links: {},
-    tech: ["Neo4j", "NER", "Graph Database", "RAG", "Python"],
-    details: {
-      overview:
-        "Extended the email classification system with Graph RAG capabilities, introducing relationship-aware processing that understands connections between emails, senders, and topics. This MVP demonstrates advanced knowledge graph integration for more sophisticated email understanding.",
-      features: [
-        "Knowledge Graph: Maps relationships between emails, creating a comprehensive network",
-        "Thread Awareness: Maintains conversation context across email chains",
-        "Entity Recognition: Identifies people, projects, and organizations",
-        "Temporal Analysis: Tracks how topics evolve over time",
-        "Multi-hop Reasoning: Discovers indirect relationships between emails",
-      ],
-      advantages: [
-        "Understands email threads and conversation context",
-        "Identifies patterns across multiple communications",
-        "Enables complex queries across related emails",
-        "Combines graph context with vector similarity for enhanced accuracy",
-      ],
-    },
-  },
-  {
-    id: 4,
     title: "CDC Pipeline with Debezium & Kafka",
     category: "Data Engineering",
     summary:
       "Robust Change Data Capture solution for real-time data synchronization and event streaming using Debezium and Apache Kafka.",
-    image:
-      "/CDCPipelinewithDebezium&Kafka.png",
+    image: "/CDCPipelinewithDebezium&Kafka.png",
     links: {},
     tech: ["Apache Kafka", "Debezium", "PostgreSQL", "Event Streaming"],
     details: {
@@ -177,13 +174,12 @@ const projects: Project[] = [
     },
   },
   {
-    id: 5,
+    id: 4,
     title: "n8n Automation & Slack Bots",
     category: "Automation",
     summary:
       "Comprehensive automation workflows including PR notifiers, reminder bots, and intelligent blocker tracking with automatic ticket creation.",
-    image:
-      "/n8nAutomation.png",
+    image: "/n8nAutomation.png",
     links: {},
     tech: ["n8n", "Slack API", "GitHub API", "Linear", "PostgreSQL"],
     details: {
@@ -240,13 +236,12 @@ const projects: Project[] = [
     },
   },
   {
-    id: 6,
+    id: 5,
     title: "Production Infrastructure Management",
     category: "DevOps",
     summary:
       "Comprehensive production infrastructure for internal developer platform, deploying multiple self-hosted open-source solutions.",
-    image:
-      "/ProductionInfrastructureManagement.png",
+    image: "/ProductionInfrastructureManagement.png",
     links: {},
     tech: ["Docker", "Nginx", "PostgreSQL", "Backstage", "Gitea", "Infisical"],
     details: {
@@ -277,13 +272,12 @@ const projects: Project[] = [
     },
   },
   {
-    id: 7,
+    id: 6,
     title: "Standalone Error Handling Package",
     category: "Library",
     summary:
       "Framework-agnostic error handling library with specialized adapters for Axios, NestJS, and Prisma.",
-    image:
-      "/StandaloneErrorHandlingPackage.png",
+    image: "/StandaloneErrorHandlingPackage.png",
     links: {},
     tech: ["TypeScript", "Axios", "NestJS", "Prisma", "Node.js"],
     details: {
@@ -310,7 +304,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 8,
+    id: 7,
     title: "NoteWiz - AI Education Platform",
     category: "EdTech",
     summary:

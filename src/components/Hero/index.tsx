@@ -4,6 +4,7 @@ import TextType from "../ui/TextType";
 import ProfileCard from "../ui/ProfileCard";
 import "./Hero.css";
 import { merriweather } from "@/app/font";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -12,7 +13,9 @@ const Hero = () => {
         <div className="text-center space-y-8 z-10 relative">
           {/* Main Heading */}
           <div className="space-y-4">
-            <h1 className={`${merriweather.className} text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight`}>
+            <h1
+              className={`${merriweather.className} text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight`}
+            >
               Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
                 Aaqeb Ahmed
@@ -20,7 +23,9 @@ const Hero = () => {
             </h1>
 
             {/* Typewriter Effect */}
-            <div className={`${merriweather.className} text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-300`}>
+            <div
+              className={`${merriweather.className} text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-300`}
+            >
               <span className="text-gray-400">I&apos;m a </span>
               <TextType
                 text={[
@@ -50,11 +55,22 @@ const Hero = () => {
           </p>
 
           {/* Action btn */}
-          <button className="btn ring-offset-background focus-visible:ring-highlight-primary whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 btn__outline" type="button" aria-disabled="false">
+          <button
+            className="btn ring-offset-background focus-visible:ring-highlight-primary whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 btn__outline"
+            type="button"
+            aria-disabled="false"
+          >
             <span className="btn__ripple"></span>
             <span className="block overflow-hidden">
-              <span className="btn__text" data-attr="My Resume">My Resume</span>
-              </span>
+              <Link
+                href="https://drive.google.com/file/d/1YKU5yvtjabn7uabD1IdiCp3m75hwsF4Q/view?usp=drive_link"
+                target="_blank"
+              >
+                <span className="btn__text" data-attr="My Resume">
+                  My Resume
+                </span>
+              </Link>
+            </span>
           </button>
         </div>
         <ProfileCard
