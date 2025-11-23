@@ -2,7 +2,7 @@ import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Debezium from "../../../svg/Debezium.svg";
-import BackButton from "@/components/ui/backButton";
+import BackButton from "@/components/ui/BackButton";
 
 const Infrastructure = () => {
   return (

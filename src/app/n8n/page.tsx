@@ -2,7 +2,7 @@ import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import n8n from "../../../svg/n8n.svg";
-import BackButton from "@/components/ui/backButton";
+import BackButton from "@/components/ui/BackButton";
 
 const N8n = () => {
   return (

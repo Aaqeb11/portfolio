@@ -2,7 +2,7 @@ import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Notewiz from "../../../svg/Notewiz.svg";
-import BackButton from "@/components/ui/backButton";
+import BackButton from "@/components/ui/BackButton";
 
 const NoteWiz = () => {
   return (
