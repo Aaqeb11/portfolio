@@ -3,6 +3,7 @@ import * as React from "react";
 import TextType from "../ui/TextType";
 import ProfileCard from "../ui/ProfileCard";
 import "./Hero.css";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -49,11 +50,22 @@ const Hero = () => {
           </p>
 
           {/* Action btn */}
-          <button className="btn ring-offset-background focus-visible:ring-highlight-primary whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 btn__outline" type="button" aria-disabled="false">
+          <button
+            className="btn ring-offset-background focus-visible:ring-highlight-primary whitespace-nowrap transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 btn__outline"
+            type="button"
+            aria-disabled="false"
+          >
             <span className="btn__ripple"></span>
             <span className="block overflow-hidden">
-              <span className="btn__text" data-attr="My Resume">My Resume</span>
-              </span>
+              <Link
+                href="https://drive.google.com/file/d/1YKU5yvtjabn7uabD1IdiCp3m75hwsF4Q/view?usp=drive_link"
+                target="_blank"
+              >
+                <span className="btn__text" data-attr="My Resume">
+                  My Resume
+                </span>
+              </Link>
+            </span>
           </button>
         </div>
         <ProfileCard
