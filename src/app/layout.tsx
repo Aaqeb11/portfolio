@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Galaxy from "../components/ui/Galaxy";
 import Particles from "../components/ui/Particles";
 
-const epundaz = localFont({
-  src: [
-    {
-      path: "../fonts/Epunda.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../fonts/EpundaI.woff2",
-      weight: "400",
-      style: "italic",
-    },
-  ],
+export const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={epundaz.className} style={{ backgroundColor: "black", overflowX: "hidden" }}>
+      <body className={poppins.className} style={{ backgroundColor: "black", overflowX: "hidden" }}>
         <div className="">{children}</div>
       </body>
     </html>

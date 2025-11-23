@@ -12,6 +12,8 @@ import projects, { Project } from "@/lib/data/projectDetails";
 import { useScroll, motion, useTransform, MotionValue } from "motion/react";
 import Image from "next/image";
 import { CircleCheckBig } from "lucide-react"
+import { merriweather } from "@/app/font";
+import Link from "next/link";
 
 const gradients = [
   'radial-gradient(ellipse at 50% 40%, #6b6b5a 0%, #4a4a58 25%, #35354a 45%, #252535 70%, #1a1a28ad 95%)', // Original gray-purple
@@ -58,8 +60,9 @@ const ProjectCard = ({
         }}
         className="relative"
       >
+        <Link href={`/projects/${project.id}`} className="block">
         <Card
-          className="w-[95vw] xl:w-[60vw] h-[700px] lg:h-[500px] rounded-3xl flex flex-col justify-between lg:flex-row p-12 relative overflow-hidden bg-[#000000]"
+          className="w-[95vw] xl:w-[60vw] h-[700px] lg:h-[500px] rounded-3xl flex flex-col justify-between lg:flex-row p-6 md:p-8 xl:p-12 relative overflow-hidden bg-[#000000]"
           style={{
             backgroundImage: cardGradient,
           }}
@@ -67,14 +70,14 @@ const ProjectCard = ({
           <div className="w-full lg:w-1/2 flex flex-col gap-4">
             <div>
               <CardHeader className="p-0">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-white/70 text-xs font-medium mb-4 w-fit">
+                <div className={`${merriweather.className} inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-white/70 text-xs font-medium mb-4 w-fit`}>
                   {project.category}
                 </div>
-                <CardTitle className="text-4xl mb-4 text-white font-bold">
+                <CardTitle className={`${merriweather.className} text-2xl lg:text-3xl mb-4 text-white font-bold`}>
                   {project.title}
                 </CardTitle>
               </CardHeader>
-              <CardDescription className="text-base lg:text-lg text-white/70 leading-relaxed">
+              <CardDescription className="text-base lg:text-lg text-white/70">
                 {project.summary}
               </CardDescription>
             </div>
@@ -115,6 +118,7 @@ const ProjectCard = ({
             </div>
           </CardContent>
         </Card>
+        </Link>
       </motion.div>
     </div>
   );

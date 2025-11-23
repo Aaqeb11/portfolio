@@ -59,7 +59,7 @@ const projects: Project[] = [
     summary:
       "A powerful CLI tool that streamlines the creation of modern React component libraries with zero configuration.",
     image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop",
+      "/ComponentDock.png",
     links: {
       npm: "https://www.npmjs.com/package/@aaqeb11/component-dock",
       github: "https://github.com/Aaqeb11/component-dock",
@@ -90,7 +90,7 @@ const projects: Project[] = [
     summary:
       "Sophisticated Retrieval-Augmented Generation solution for intelligent email classification using the FLARE approach.",
     image:
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop",
+      "/AdvancedRAGEmailClassification.png",
     links: {},
     tech: ["Python", "Vector DB", "PostgreSQL", "LLM", "FLARE"],
     details: {
@@ -120,7 +120,7 @@ const projects: Project[] = [
     summary:
       "Extended email classification with Graph RAG capabilities, introducing relationship-aware processing for sophisticated email understanding.",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+      "/GraphRAGEmailProcessingMVP.png",
     links: {},
     tech: ["Neo4j", "NER", "Graph Database", "RAG", "Python"],
     details: {
@@ -148,7 +148,7 @@ const projects: Project[] = [
     summary:
       "Robust Change Data Capture solution for real-time data synchronization and event streaming using Debezium and Apache Kafka.",
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop",
+      "/CDCPipelinewithDebezium&Kafka.png",
     links: {},
     tech: ["Apache Kafka", "Debezium", "PostgreSQL", "Event Streaming"],
     details: {
@@ -183,7 +183,7 @@ const projects: Project[] = [
     summary:
       "Comprehensive automation workflows including PR notifiers, reminder bots, and intelligent blocker tracking with automatic ticket creation.",
     image:
-      "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&h=400&fit=crop",
+      "/n8nAutomation.png",
     links: {},
     tech: ["n8n", "Slack API", "GitHub API", "Linear", "PostgreSQL"],
     details: {
@@ -246,7 +246,7 @@ const projects: Project[] = [
     summary:
       "Comprehensive production infrastructure for internal developer platform, deploying multiple self-hosted open-source solutions.",
     image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=400&fit=crop",
+      "/ProductionInfrastructureManagement.png",
     links: {},
     tech: ["Docker", "Nginx", "PostgreSQL", "Backstage", "Gitea", "Infisical"],
     details: {
@@ -283,7 +283,7 @@ const projects: Project[] = [
     summary:
       "Framework-agnostic error handling library with specialized adapters for Axios, NestJS, and Prisma.",
     image:
-      "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop",
+      "/StandaloneErrorHandlingPackage.png",
     links: {},
     tech: ["TypeScript", "Axios", "NestJS", "Prisma", "Node.js"],
     details: {
