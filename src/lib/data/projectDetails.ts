@@ -113,36 +113,36 @@ const projects: Project[] = [
       ],
     },
   },
+  // {
+  //   id: 3,
+  //   title: "Graph RAG Email Processing MVP",
+  //   category: "AI/ML System",
+  //   summary:
+  //     "Extended email classification with Graph RAG capabilities, introducing relationship-aware processing for sophisticated email understanding.",
+  //   image:
+  //     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+  //   links: {},
+  //   tech: ["Neo4j", "NER", "Graph Database", "RAG", "Python"],
+  //   details: {
+  //     overview:
+  //       "Extended the email classification system with Graph RAG capabilities, introducing relationship-aware processing that understands connections between emails, senders, and topics. This MVP demonstrates advanced knowledge graph integration for more sophisticated email understanding.",
+  //     features: [
+  //       "Knowledge Graph: Maps relationships between emails, creating a comprehensive network",
+  //       "Thread Awareness: Maintains conversation context across email chains",
+  //       "Entity Recognition: Identifies people, projects, and organizations",
+  //       "Temporal Analysis: Tracks how topics evolve over time",
+  //       "Multi-hop Reasoning: Discovers indirect relationships between emails",
+  //     ],
+  //     advantages: [
+  //       "Understands email threads and conversation context",
+  //       "Identifies patterns across multiple communications",
+  //       "Enables complex queries across related emails",
+  //       "Combines graph context with vector similarity for enhanced accuracy",
+  //     ],
+  //   },
+  // },
   {
     id: 3,
-    title: "Graph RAG Email Processing MVP",
-    category: "AI/ML System",
-    summary:
-      "Extended email classification with Graph RAG capabilities, introducing relationship-aware processing for sophisticated email understanding.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-    links: {},
-    tech: ["Neo4j", "NER", "Graph Database", "RAG", "Python"],
-    details: {
-      overview:
-        "Extended the email classification system with Graph RAG capabilities, introducing relationship-aware processing that understands connections between emails, senders, and topics. This MVP demonstrates advanced knowledge graph integration for more sophisticated email understanding.",
-      features: [
-        "Knowledge Graph: Maps relationships between emails, creating a comprehensive network",
-        "Thread Awareness: Maintains conversation context across email chains",
-        "Entity Recognition: Identifies people, projects, and organizations",
-        "Temporal Analysis: Tracks how topics evolve over time",
-        "Multi-hop Reasoning: Discovers indirect relationships between emails",
-      ],
-      advantages: [
-        "Understands email threads and conversation context",
-        "Identifies patterns across multiple communications",
-        "Enables complex queries across related emails",
-        "Combines graph context with vector similarity for enhanced accuracy",
-      ],
-    },
-  },
-  {
-    id: 4,
     title: "CDC Pipeline with Debezium & Kafka",
     category: "Data Engineering",
     summary:
@@ -177,7 +177,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 5,
+    id: 4,
     title: "n8n Automation & Slack Bots",
     category: "Automation",
     summary:
@@ -240,7 +240,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 6,
+    id: 5,
     title: "Production Infrastructure Management",
     category: "DevOps",
     summary:
@@ -277,7 +277,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 7,
+    id: 6,
     title: "Standalone Error Handling Package",
     category: "Library",
     summary:
@@ -310,7 +310,7 @@ const projects: Project[] = [
     },
   },
   {
-    id: 8,
+    id: 7,
     title: "NoteWiz - AI Education Platform",
     category: "EdTech",
     summary:

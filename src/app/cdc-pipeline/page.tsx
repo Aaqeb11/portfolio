@@ -2,9 +2,9 @@ import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Debezium from "../../../svg/Debezium.svg";
-import BackButton from "@/components/ui/backButton";
+import BackButton from "@/components/ui/BackButton";
 
-const ComponentDock = () => {
+const CdcPipeline = () => {
   return (
     <div className="min-h-screen bg-[##0a0a0a]">
       {/* Header */}
@@ -13,11 +13,9 @@ const ComponentDock = () => {
           <BackButton />
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#ccf5f5]">
-              Component Dock
+              CDC Pipeline with Debezium & Kafka
             </h1>
-            <p className="text-xl text-[#ccf5f5]">
-              React Component Library CLI
-            </p>
+            <p className="text-xl text-[#ccf5f5]">Data Engineering</p>
           </div>
         </div>
       </header>
@@ -31,13 +29,12 @@ const ComponentDock = () => {
               Overview
             </h2>
             <p className="text-[#6DB9DE] text-lg leading-loose">
-              Component Dock is a powerful command-line interface tool designed
-              to streamline the creation of modern React component libraries.
-              Built to solve the complexity of setting up component library
-              infrastructure, it provides developers with production-ready
-              scaffolding that includes all the essential tools and
-              configurations needed for building, testing, and publishing
-              high-quality React components.
+              Architected and implemented a robust Change Data Capture (CDC)
+              solution using Debezium and Apache Kafka for real-time data
+              synchronization and event streaming. This system enables seamless
+              data flow between multiple databases and services while
+              maintaining data consistency and enabling event-driven
+              architecture.
             </p>
           </div>
 
@@ -50,7 +47,7 @@ const ComponentDock = () => {
               <Image
                 src={Debezium}
                 alt="Debezium Logo"
-                width={1200}
+                width={1300}
                 height={1200}
               />
             </div>
@@ -64,34 +61,22 @@ const ComponentDock = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 {
-                  title: "Automated Scaffolding",
+                  title: "Change Detection",
                   description:
-                    "Instantly generate a complete component library structure with a single command",
+                    "Debezium monitors database transaction logs in real-time",
                 },
                 {
-                  title: "Modern Toolchain",
-                  description:
-                    "Pre-configured with Rollup, TypeScript, Storybook, ESLint, and Prettier",
+                  title: "Event Creation",
+                  description: "Converts database changes into Kafka events",
                 },
                 {
-                  title: "Zero Configuration",
+                  title: "Stream Processing",
                   description:
-                    "Start building components immediately without spending hours on build configuration",
+                    "Kafka distributes events to subscribed consumers",
                 },
                 {
-                  title: "Best Practices Built-in",
-                  description:
-                    "Follows React community standards and modern development practices",
-                },
-                {
-                  title: "NPM Publishing Ready",
-                  description:
-                    "Generated libraries are pre-configured for seamless NPM package publishing",
-                },
-                {
-                  title: "Type Safety",
-                  description:
-                    "TypeScript integration for better developer experience and fewer bugs",
+                  title: "Schema Registry",
+                  description: "Maintains event schema consistency",
                 },
               ].map((feature, index) => (
                 <div key={index} className="p-4 bg-[#262626]/20 rounded-lg">
@@ -113,13 +98,11 @@ const ComponentDock = () => {
             </h2>
             <div className="flex flex-wrap gap-2">
               {[
-                "TypeScript",
-                "Rollup",
-                "Storybook",
-                "Jest",
-                "ESLint",
-                "Prettier",
-                "NPM",
+                "Apache Kafka",
+                "Debezium",
+                "PostgreSQL",
+                "Event Streaming",
+                "NestJS",
               ].map((tech, index) => (
                 <span
                   key={index}
@@ -138,10 +121,11 @@ const ComponentDock = () => {
             </h2>
             <ul className="flex flex-col gap-3 list-none p-0 text-[#6DB9DE]">
               {[
-                "Quickly bootstrap new component libraries for design systems",
-                "Create reusable UI component packages for multiple projects",
-                "Build open-source React component libraries",
-                "Establish consistent component architecture across teams",
+                "Real-time data replication across microservices",
+                "Cache invalidation and synchronization",
+                "Audit logging and compliance tracking",
+                "Analytics pipeline feeding",
+                "Search index updates",
               ].map((useCase, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <span className="text-[#3da5d9] mt-1">▹</span>
@@ -150,32 +134,10 @@ const ComponentDock = () => {
               ))}
             </ul>
           </div>
-
-          {/* Links */}
-          <div className="flex flex-wrap gap-3">
-            <a
-              href="https://www.npmjs.com/package/@aaqeb11/component-dock"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#3da5d9] text-[#3da5d9]-[#ccf5f5] rounded-lg hover:bg-[#3da5d9]/90 transition-all no-underline"
-            >
-              <ExternalLink className="w-4 h-4" />
-              <span>NPM Package</span>
-            </a>
-            <a
-              href="https://github.com/Aaqeb11/component-dock"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#3d4d5c] text-[#6DB9DE] rounded-lg hover:bg-[#3d4d5c]/80 transition-all no-underline"
-            >
-              <Github className="w-4 h-4" />
-              <span>GitHub</span>
-            </a>
-          </div>
         </div>
       </main>
     </div>
   );
 };
 
-export default ComponentDock;
+export default CdcPipeline;
