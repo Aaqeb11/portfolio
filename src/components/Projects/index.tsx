@@ -12,6 +12,8 @@ import projects, { Project } from "@/lib/data/projectDetails";
 import { useScroll, motion, useTransform, MotionValue } from "motion/react";
 import Image from "next/image";
 import { CircleCheckBig } from "lucide-react";
+import { merriweather } from "@/app/font";
+import Link from "next/link";
 
 const gradients = [
   "radial-gradient(ellipse at 50% 40%, #6b6b5a 0%, #4a4a58 25%, #35354a 45%, #252535 70%, #1a1a28ad 95%)", // Original gray-purple
@@ -58,69 +60,75 @@ const ProjectCard = ({
         }}
         className="relative"
       >
-        <Card
-          className="w-[95vw] xl:w-[70vw] h-[700px] lg:h-[550px] rounded-3xl flex flex-col justify-between lg:flex-row p-12 relative overflow-hidden bg-[#000000]"
-          style={{
-            backgroundImage: cardGradient,
-          }}
-        >
-          <div className="w-full lg:w-1/2 flex flex-col gap-4">
-            <div>
-              <CardHeader className="p-0">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-white/70 text-xs font-medium mb-4 w-fit">
-                  {project.category}
-                </div>
-                <CardTitle className="text-4xl mb-4 text-white font-bold">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              <CardDescription className="text-base lg:text-lg text-white/70 leading-relaxed">
-                {project.summary}
-              </CardDescription>
-            </div>
-
-            {/*features*/}
-            <div className="mt-4 space-y-3">
-              {project.details.features?.slice(0, 3).map((feature, idx) => {
-                const [title, description] = feature.split(":");
-                return (
+        <Link href={`/projects/${project.id}`} className="block">
+          <Card
+            className="w-[95vw] xl:w-[70vw] h-[700px] lg:h-[550px] rounded-3xl flex flex-col justify-between lg:flex-row p-12 relative overflow-hidden bg-[#000000]"
+            style={{
+              backgroundImage: cardGradient,
+            }}
+          >
+            <div className="w-full lg:w-1/2 flex flex-col gap-4">
+              <div>
+                <CardHeader className="p-0">
                   <div
-                    key={idx}
-                    className="flex items-start gap-3 text-base lg:text-lg"
+                    className={`${merriweather.className} inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-white/70 text-xs font-medium mb-4 w-fit`}
                   >
-                    <CircleCheckBig className="w-5 h-5 mt-1 text-white/60" />
-                    <div className="flex-1">
-                      <span className="text-white font-medium">{title}</span>
-                      {description && (
-                        <span className="text-white/60">
-                          {" "}
-                          - {description.trim()}
-                        </span>
-                      )}
-                    </div>
+                    {project.category}
                   </div>
-                );
-              })}
-            </div>
-          </div>
+                  <CardTitle
+                    className={`${merriweather.className} text-2xl lg:text-3xl mb-4 text-white font-bold`}
+                  >
+                    {project.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardDescription className="text-base lg:text-lg text-white/70">
+                  {project.summary}
+                </CardDescription>
+              </div>
 
-          <CardContent className="w-full lg:w-1/2 flex items-center justify-center p-0 pt-4 lg:pt-0 lg:pl-12">
-            <div className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
-              <motion.div
-                style={{ scale: imageScale }}
-                className="relative w-full h-full"
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={500}
-                  height={400}
-                  className="object-cover w-full h-full rounded-2xl"
-                />
-              </motion.div>
+              {/*features*/}
+              <div className="mt-4 space-y-3">
+                {project.details.features?.slice(0, 3).map((feature, idx) => {
+                  const [title, description] = feature.split(":");
+                  return (
+                    <div
+                      key={idx}
+                      className="flex items-start gap-3 text-base lg:text-lg"
+                    >
+                      <CircleCheckBig className="w-5 h-5 mt-1 text-white/60" />
+                      <div className="flex-1">
+                        <span className="text-white font-medium">{title}</span>
+                        {description && (
+                          <span className="text-white/60">
+                            {" "}
+                            - {description.trim()}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </CardContent>
-        </Card>
+
+            <CardContent className="w-full lg:w-1/2 flex items-center justify-center p-0 pt-4 lg:pt-0 lg:pl-12">
+              <div className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
+                <motion.div
+                  style={{ scale: imageScale }}
+                  className="relative w-full h-full"
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={500}
+                    height={400}
+                    className="object-cover w-full h-full rounded-2xl"
+                  />
+                </motion.div>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
       </motion.div>
     </div>
   );

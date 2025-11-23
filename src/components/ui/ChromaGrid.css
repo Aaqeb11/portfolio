@@ -17,22 +17,6 @@
   --r: 220px;
 }
 
-@media (max-width: 1124px) {
-  .chroma-grid {
-    grid-template-columns: repeat(var(--cols, 4), 150px);
-    gap: 0.5rem;
-    padding: 0.5rem;
-  }
-}
-
-@media (max-width: 700px) {
-  .chroma-grid {
-    grid-template-columns: repeat(var(--cols, 2), 150px);
-    gap: 0.5rem;
-    padding: 0.5rem;
-  }
-}
-
 .chroma-card {
   position: relative;
   display: flex;
@@ -171,4 +155,24 @@
 
   opacity: 1;
   transition: opacity 0.25s ease;
+}
+
+@media (max-width: 1124px) {
+  .chroma-grid {
+    grid-template-columns: repeat(var(--cols, 4), 150px);
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .chroma-grid {
+    grid-template-columns: repeat(var(--cols, 3), 110px);
+    gap: 0.3rem;
+    padding: 0.3rem;
+  }
+
+  .chroma-card {
+    width: 110px;
+  }
 }
