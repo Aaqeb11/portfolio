@@ -4,11 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Galaxy from "../components/ui/Galaxy";
 import Particles from "../components/ui/Particles";
-
-export const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
+import { poppins } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Aaqeb's Portfolio",
@@ -22,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className} style={{ backgroundColor: "black", overflowX: "hidden" }}>
+      <body
+        className={poppins.className}
+        style={{ backgroundColor: "black", overflowX: "hidden" }}
+      >
         <div className="">{children}</div>
       </body>
     </html>
