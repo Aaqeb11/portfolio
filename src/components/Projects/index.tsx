@@ -156,7 +156,6 @@ const ProjectCard = ({
                   alt={project.title}
                   width={800}
                   height={800}
-                  quality={100}
                   className="object-cover w-full h-full rounded-2xl "
                 />
               </motion.div>
