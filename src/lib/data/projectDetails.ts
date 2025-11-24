@@ -49,6 +49,7 @@ export type Project = {
   links: ProjectLinks;
   tech: string[];
   details: ProjectDetails;
+  page: string;
 };
 
 const projects: Project[] = [
@@ -81,6 +82,7 @@ const projects: Project[] = [
         "Establish consistent component architecture across teams",
       ],
     },
+    page: "/component-dock",
   },
   {
     id: 2,
@@ -110,6 +112,7 @@ const projects: Project[] = [
         "Confidence Scoring: Assign confidence metrics to each classification",
       ],
     },
+    page: "/email-classification",
   },
   // {
   //   id: 3,
@@ -172,6 +175,7 @@ const projects: Project[] = [
         "Scalable horizontal architecture",
       ],
     },
+    page: "/cdc-pipeline",
   },
   {
     id: 4,
@@ -234,6 +238,7 @@ const projects: Project[] = [
         "Streamlined data operations reducing manual migration effort",
       ],
     },
+    page: "/n8n",
   },
   {
     id: 5,
@@ -270,6 +275,7 @@ const projects: Project[] = [
         "Enhanced security with self-hosted solutions",
       ],
     },
+    page: "/infrastructure",
   },
   {
     id: 6,
@@ -302,6 +308,7 @@ const projects: Project[] = [
         "Better error messages for debugging",
       ],
     },
+    page: "/error-package",
   },
   {
     id: 7,
@@ -340,6 +347,7 @@ const projects: Project[] = [
         "Better knowledge retention through spaced repetition",
       ],
     },
+    page: "/notewiz",
   },
 ];
 

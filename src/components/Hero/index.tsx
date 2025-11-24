@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="w-screen h-screen flex items-center justify-center ">
+    <div className="w-screen h-screen flex items-center justify-center mt-12 md:mt-0">
       <div className=" flex flex-col md:flex-row pt-8 md:pt-0 gap-12 items-center">
         <div className="text-center space-y-8 z-10 relative">
           {/* Main Heading */}

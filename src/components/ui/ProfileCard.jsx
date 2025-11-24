@@ -377,7 +377,7 @@ const ProfileCardComponent = ({
             </div>
             <div className="pc-content">
               <div className="pc-details">
-                <h2 className="text-3xl">{name}</h2>
+                <h2 className=" text-xl md:text-3xl">{name}</h2>
                 <p>{title}</p>
               </div>
             </div>
