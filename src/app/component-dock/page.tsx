@@ -41,21 +41,6 @@ const ComponentDock = () => {
             </p>
           </div>
 
-          {/* Architecture*/}
-          <div className="p-6 bg-[#141414] border border-border/50 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-[#ccf5f5]">
-              Architecture
-            </h2>
-            <div className="h-[300px]">
-              <Image
-                src={Debezium}
-                alt="Debezium Logo"
-                width={1200}
-                height={1200}
-              />
-            </div>
-          </div>
-
           {/* Key Features */}
           <div className="p-6 bg-[#141414] border border-border/50 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4 text-[#ccf5f5]">
