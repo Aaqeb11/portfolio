@@ -32,7 +32,7 @@ type ButtonProps<T extends React.ElementType = "button"> = {
 >;
 
 export function Button<T extends React.ElementType = "button">({
-  borderRadius = "1.75rem",
+  borderRadius = "0.75rem",
   children,
   as,
   containerClassName,
@@ -58,7 +58,7 @@ export function Button<T extends React.ElementType = "button">({
         className="absolute inset-0"
         style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
       >
-        <MovingBorder duration={duration} rx="30%" ry="30%">
+        <MovingBorder duration={duration} rx="10%" ry="10%">
           <div
             className={cn(
               "h-20 w-20 bg-[radial-gradient(#0ea5e9_40%,transparent_60%)] opacity-[0.8]",

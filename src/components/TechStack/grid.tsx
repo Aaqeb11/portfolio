@@ -20,7 +20,7 @@ const techStackItems = [
   {
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    title: "JavaScript", 
+    title: "JavaScript",
     borderColor: "#F7DF1E",
     gradient: "linear-gradient(135deg, #F7DF1E 0%, #e6c200 100%)",
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
@@ -28,7 +28,7 @@ const techStackItems = [
   {
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    title: "Python",   
+    title: "Python",
     borderColor: "#306998",
     gradient: "linear-gradient(135deg, #4B8BBE 0%, #306998 50%, #FFD43B 100%)",
     url: "https://python.org",
@@ -36,7 +36,7 @@ const techStackItems = [
   {
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    title: "Node.js", 
+    title: "Node.js",
     borderColor: "#68A063",
     gradient: "linear-gradient(135deg, #68A063 0%, #3C873A 100%)",
     url: "https://nodejs.org",
@@ -44,10 +44,18 @@ const techStackItems = [
   {
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-    title: "Next.js",  
+    title: "Next.js",
     borderColor: "#000000",
     gradient: "linear-gradient(135deg, #000000 0%, #434343 100%)",
     url: "https://nextjs.org",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg",
+    title: "Expo",
+    borderColor: "#000020",
+    gradient: "linear-gradient(135deg, #000020 0%, #4A4A4A 100%)",
+    url: "https://expo.dev/",
   },
   {
     image:
@@ -60,7 +68,7 @@ const techStackItems = [
   {
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
-    title: "FastAPI",   
+    title: "FastAPI",
     borderColor: "#009688",
     gradient: "linear-gradient(135deg, #009688 0%, #00695c 100%)",
     url: "https://fastapi.tiangolo.com",
@@ -162,7 +170,7 @@ const techStackItems = [
   },
   {
     image: "https://logo.svgcdn.com/simple-icons/n8n-dark.svg",
-    title: "n8n", 
+    title: "n8n",
     borderColor: "#EA4B71",
     gradient: "linear-gradient(135deg, #EA4B71 0%, #c73d5d 100%)",
     url: "https://n8n.io",
@@ -170,7 +178,7 @@ const techStackItems = [
   {
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg",
-    title: "Playwright",  
+    title: "Playwright",
     borderColor: "#E2574C",
     gradient: "linear-gradient(135deg, #E2574C 0%, #1E8D22 100%)",
     url: "https://playwright.dev",
@@ -192,7 +200,7 @@ const techStackItems = [
   },
   {
     image: "https://sinonjs.org/assets/images/logo.png",
-    title: "Sinon", 
+    title: "Sinon",
     borderColor: "#7FBA00",
     gradient: "linear-gradient(135deg, #7FBA00 0%, #5d8800 100%)",
     url: "https://sinonjs.org",
@@ -228,6 +236,35 @@ const techStackItems = [
     borderColor: "#E95420",
     gradient: "linear-gradient(135deg, #E95420 0%, #c44217 100%)",
     url: "https://ubuntu.com",
+  },
+  {
+    image: "https://cdn.simpleicons.org/langchain/00C853",
+    title: "LangChain",
+    borderColor: "#00C853",
+    gradient: "linear-gradient(135deg, #00C853 0%, #007e33 100%)",
+    url: "https://www.langchain.com/",
+  },
+  {
+    image: "https://cdn.simpleicons.org/langchain/1E88E5",
+    title: "LangGraph",
+    borderColor: "#1E88E5",
+    gradient: "linear-gradient(135deg, #1E88E5 0%, #1565c0 100%)",
+    url: "https://langchain-ai.github.io/langgraph/",
+  },
+  {
+    image: "https://cdn.simpleicons.org/langchain/6A1B9A",
+    title: "LangSmith",
+    borderColor: "#6A1B9A",
+    gradient: "linear-gradient(135deg, #6A1B9A 0%, #4a148c 100%)",
+    url: "https://www.langchain.com/langsmith",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg",
+    title: "Rust",
+    borderColor: "#DEA584",
+    gradient: "linear-gradient(135deg, #DEA584 0%, #b16d4e 100%)",
+    url: "https://www.rust-lang.org",
   },
 ];
 

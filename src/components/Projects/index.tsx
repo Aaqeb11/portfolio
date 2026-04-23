@@ -1,31 +1,11 @@
 "use client";
 import * as React from "react";
-import { useRef } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { useRef, useState, useEffect } from "react";
 import projects, { Project } from "@/lib/data/projectDetails";
 import { useScroll, motion, useTransform, MotionValue } from "motion/react";
-import Image from "next/image";
-import { ArrowRight, CircleCheckBig } from "lucide-react";
-import { merriweather } from "@/app/font";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/moving-border";
-
-const gradients = [
-  "radial-gradient(ellipse at 50% 40%, #6b6b5a 0%, #4a4a58 25%, #35354a 45%, #252535 70%, #1a1a28ad 95%)", // Original gray-purple
-  "radial-gradient(ellipse at 50% 40%, #5a6b6b 0%, #3d4d5a 25%, #2d3d4a 45%, #1d2d3a 70%, #1a202894 95%)", // Blue-gray
-  "radial-gradient(ellipse at 50% 40%, #6b5a6b 0%, #584a58 25%, #4a354a 45%, #3a2535 70%, #281a289f 95%)", // Purple-magenta
-  "radial-gradient(ellipse at 50% 40%, #6b5a5a 0%, #584a48 25%, #4a3538 45%, #3a2528 70%, #281a1a9f 95%)", // Red-brown
-  "radial-gradient(ellipse at 50% 40%, #5a6b5a 0%, #4a584a 25%, #354a35 45%, #253a25 70%, #1a281a77 95%)", // Green
-  "radial-gradient(ellipse at 50% 40%, #6b6b5a 0%, #58584a 25%, #4a4a35 45%, #3a3a25 70%, #28281a77 95%)", // Olive-yellow
-  "radial-gradient(ellipse at 50% 40%, #5a5a6b 0%, #484858 25%, #383848 45%, #282838 70%, #1a1a28ad 95%)", // Deep blue
-  "radial-gradient(ellipse at 50% 40%, #6b5a5f 0%, #584a50 25%, #4a3540 45%, #3a2530 70%, #281a20b0 95%)", // Rose-wine
-];
 
 const ProjectCard = ({
   project,
@@ -38,17 +18,33 @@ const ProjectCard = ({
   i: number;
   progress: MotionValue<number>;
   range: [number, number];
-  targetScale: number | MotionValue<number>;
+  targetScale: number;
 }) => {
   const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start start"],
-  });
-
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
-  const cardGradient = gradients[i % gradients.length];
+  // Normalize features across different project shapes
+  const highlights = (
+    project.details.features ??
+    project.details.services ??
+    project.details.architecture ??
+    []
+  )
+    .slice(0, 3)
+    .map((item) => {
+      const [title, desc] = item.split(":");
+      return { title: title.trim(), desc: desc?.trim() };
+    });
+
+  const categoryBorder: Record<string, string> = {
+    "AI/ML System": "hover:border-violet-500/70",
+    "Data Engineering": "hover:border-blue-500/70",
+    Automation: "hover:border-emerald-500/70",
+    DevOps: "hover:border-orange-500/70",
+    Library: "hover:border-yellow-500/70",
+    "CLI Tool": "hover:border-cyan-500/70",
+    EdTech: "hover:border-pink-500/70",
+  };
+
   return (
     <div
       ref={container}
@@ -59,109 +55,88 @@ const ProjectCard = ({
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className="relative"
+        className="relative w-[95vw] xl:w-[68vw] min-h-[58vh] lg:min-h-[60vh]"
       >
-        <Card
-          className="w-[95vw] xl:w-[70vw] h-[85vh] lg:h-[78vh] rounded-3xl flex flex-col justify-between lg:flex-row p-12 relative overflow-hidden bg-[#000000]"
-          style={{
-            backgroundImage: cardGradient,
-          }}
+        <div
+          className={`
+            group rounded-2xl border border-white/[0.07] bg-[#0c0c0c]
+            p-8 lg:p-12 min-h-[420px] flex flex-col justify-between
+            transition-all duration-500 cursor-pointer
+            hover:bg-[#0f0f0f] hover:shadow-[0_8px_32px_rgba(0,0,0,0.5)] 2xl:h-[55vh]
+            ${categoryBorder[project.category] ?? "hover:border-white/15"}
+          `}
         >
-          <div className="w-full lg:w-1/2 flex flex-col gap-4">
-            <div>
-              <CardHeader className="p-0">
-                <div
-                  className={`${merriweather.className} inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-white/70 text-xs font-medium mb-4 w-fit`}
-                >
-                  {project.category}
-                </div>
-                <CardTitle
-                  className={`${merriweather.className} text-2xl lg:text-3xl mb-4 text-white font-bold`}
-                >
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              <CardDescription className="text-base lg:text-lg text-white/70">
-                {project.summary}
-              </CardDescription>
-            </div>
-
-            {/*features*/}
-            <div className="mt-4 space-y-3 hidden md:block">
-              {project.details.features?.slice(0, 3).map((feature, idx) => {
-                const [title, description] = feature.split(":");
-                return (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-3 text-base lg:text-lg"
-                  >
-                    <CircleCheckBig className="w-5 h-5 mt-1 text-white/60" />
-                    <div className="flex-1">
-                      <span className="text-white font-medium">{title}</span>
-                      {description && (
-                        <span className="text-white/60">
-                          {" "}
-                          - {description.trim()}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-              {project.details.services?.slice(0, 3).map((feature, idx) => {
-                const [title, description] = feature.split(":");
-                return (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-3 text-base lg:text-lg"
-                  >
-                    <CircleCheckBig className="w-5 h-5 mt-1 text-white/60" />
-                    <div className="flex-1">
-                      <span className="text-white font-medium">{title}</span>
-                      {description && (
-                        <span className="text-white/60">
-                          {" "}
-                          - {description.trim()}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="my-5">
-              <Button
-                borderRadius="1.75rem"
-                className=" bg-black text-white border-neutral-200 dark:border-slate-800 hover:cursor-pointer"
-              >
-                <Link
-                  href={project.page}
-                  className="w-full h-full flex items-center justify-center"
-                >
-                  Explore
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+          {/* Top row */}
+          <div className="flex items-center justify-between mb-8">
+            <span className="text-base text-neutral-600 uppercase tracking-widest font-medium">
+              {project.category}
+            </span>
+            <div className="flex items-center gap-3">
+              <span className="text-base text-neutral-700 font-mono tabular-nums">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <ArrowUpRight className="w-4 h-4 text-neutral-700 transition-all duration-200 group-hover:text-neutral-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </div>
           </div>
 
-          <CardContent className="w-full lg:w-1/2 flex items-center justify-center p-0 pt-4 lg:pt-0 lg:pl-12">
-            <div className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
-              <motion.div
-                style={{ scale: imageScale }}
-                className="relative w-full h-full"
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={800}
-                  height={800}
-                  className="object-cover w-full h-full rounded-2xl "
-                />
-              </motion.div>
+          {/* Title */}
+          <h3 className="text-3xl lg:text-4xl font-semibold text-white tracking-tight mb-3 leading-snug">
+            {project.title}
+          </h3>
+
+          {/* Summary */}
+          <p className="text-md lg:text-lg text-neutral-500 leading-relaxed mb-8 max-w-2xl">
+            {project.summary}
+          </p>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-white/[0.05] mb-8" />
+
+          {/* Highlights — 3-column grid */}
+          {highlights.length > 0 && (
+            <div className="hidden md:grid grid-cols-3 gap-6 mb-8">
+              {highlights.map(({ title, desc }, idx) => (
+                <div key={idx}>
+                  <p className="text-md text-white/80 font-medium mb-1">
+                    {title}
+                  </p>
+                  {desc && (
+                    <p className="text-base text-neutral-600 leading-relaxed">
+                      {desc}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
-          </CardContent>
-        </Card>
+          )}
+
+          {/* Bottom row — tech tags + explore */}
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2">
+              {project.tech.slice(0, 5).map((tag) => (
+                <span
+                  key={tag}
+                  className="text-base text-neutral-500 bg-white/[0.04] border border-white/[0.06] rounded-md px-2.5 py-1 font-mono"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <Button
+              containerClassName="h-12 w-32 md:h-16 md:w-40"
+              className="flex items-center gap-1.5 text-base md:text-lg hover:text-neutral-600 text-white transition-colors duration-200 group/link rounded-none"
+            >
+              <Link
+                href={project.page}
+                className="w-full h-full flex items-center justify-center"
+              >
+                Explore
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
       </motion.div>
     </div>
   );
@@ -179,14 +154,13 @@ const Projects = () => {
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.05;
         const start = i / projects.length;
-        const end = 1;
         return (
           <ProjectCard
-            key={i}
+            key={project.id}
             i={i}
             project={project}
             progress={scrollYProgress}
-            range={[start, end]}
+            range={[start, 1]}
             targetScale={targetScale}
           />
         );

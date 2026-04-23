@@ -4,6 +4,7 @@ import { SocialSideBar } from "@/components/ui/SocialSideBar";
 import Hero from "@/components/Hero";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <SocialSideBar />
       <Projects />
       <TechStack />
+      <Footer />
     </div>
   );
 }

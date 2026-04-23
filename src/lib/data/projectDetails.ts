@@ -20,7 +20,7 @@ export type ProjectLinks = {
 };
 
 export type ProjectDetails = {
-  overview: string;
+  overview?: string;
   features?: string[];
   useCases?: string[]; // Mark optional if some projects miss them
   pipeline?: string[];
@@ -114,34 +114,6 @@ const projects: Project[] = [
     },
     page: "/email-classification",
   },
-  // {
-  //   id: 3,
-  //   title: "Graph RAG Email Processing MVP",
-  //   category: "AI/ML System",
-  //   summary:
-  //     "Extended email classification with Graph RAG capabilities, introducing relationship-aware processing for sophisticated email understanding.",
-  //   image:
-  //     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-  //   links: {},
-  //   tech: ["Neo4j", "NER", "Graph Database", "RAG", "Python"],
-  //   details: {
-  //     overview:
-  //       "Extended the email classification system with Graph RAG capabilities, introducing relationship-aware processing that understands connections between emails, senders, and topics. This MVP demonstrates advanced knowledge graph integration for more sophisticated email understanding.",
-  //     features: [
-  //       "Knowledge Graph: Maps relationships between emails, creating a comprehensive network",
-  //       "Thread Awareness: Maintains conversation context across email chains",
-  //       "Entity Recognition: Identifies people, projects, and organizations",
-  //       "Temporal Analysis: Tracks how topics evolve over time",
-  //       "Multi-hop Reasoning: Discovers indirect relationships between emails",
-  //     ],
-  //     advantages: [
-  //       "Understands email threads and conversation context",
-  //       "Identifies patterns across multiple communications",
-  //       "Enables complex queries across related emails",
-  //       "Combines graph context with vector similarity for enhanced accuracy",
-  //     ],
-  //   },
-  // },
   {
     id: 3,
     title: "CDC Pipeline with Debezium & Kafka",
@@ -179,6 +151,67 @@ const projects: Project[] = [
   },
   {
     id: 4,
+    title: "ClawOps",
+    summary:
+      "AI-powered DevOps monitoring system that watches cloud infrastructure, reasons over metrics, and communicates with your team through Slack — in plain language. Built on OpenClaw with sustainability-first principles.",
+    category: "DevOps",
+    image: "/ClawOps.png",
+    links: {
+      github: "https://github.com/Aaqeb11/ClawOps",
+    },
+    tech: ["TypeScript", "OpenClaw", "Slack API", "AWS", "Terraform", "pnpm"],
+    page: "/clawops",
+    details: {
+      overview:
+        "ClawOps is an AI-driven DevOps monitoring system built on OpenClaw — an open-source personal AI agent runtime. It continuously watches your cloud infrastructure, understands what it sees, and communicates with your development team through Slack in plain, human language. Rather than forwarding raw metrics, ClawOps correlates signals, reasons about anomalies, and suggests or takes appropriate action — including flagging wasteful compute to reduce your carbon footprint.",
+      features: [
+        "AI Analysis: Correlates signals, reasons about anomalies, and suggests or auto-executes remediation actions",
+        "Two-Way Slack: Receive alerts and issue natural language commands directly from your Slack channel",
+        "Green Computing: Detects idle servers, estimates carbon footprint, and recommends eco-friendly actions",
+      ],
+      architecture: [
+        "Cloud Provider SDK: Pluggable TypeScript adapters for AWS (EC2 + CloudWatch), GCP, and Azure",
+        "OpenClaw Agent: Persistent memory per instance — understands weekend traffic patterns vs. real anomalies",
+        "Action Engine: Auto-executes low-risk actions, requires Slack approval for high-risk or critical operations",
+      ],
+    },
+  },
+  {
+    id: 5,
+    title: "DynaAudit",
+    summary:
+      "Multi-agent smart contract auditing system with dynamic RAG — continuously ingesting live on-chain exploits from Etherscan, Forta, and DeFiHackLabs to detect vulnerabilities beyond any model's training cutoff.",
+    category: "AI/ML System",
+    image: "/DynaAudit.png",
+    links: {
+      github: "https://github.com/Aaqeb11/DynaAudit",
+    },
+    tech: [
+      "LangChain",
+      "LangGraph",
+      "NestJS",
+      "PostgreSQL",
+      "Pinecone",
+      "TypeScript",
+    ],
+    page: "/dynaaudit",
+    details: {
+      overview:
+        "DynaAudit is a multi-agent smart contract auditing system that addresses a critical gap in existing LLM-based tools: static knowledge bases cannot detect vulnerabilities from exploits that occur after model training cutoffs. It combines four specialized AI agents modeled on a real-world audit firm with a dynamic RAG pipeline that continuously ingests live on-chain exploits — detecting both known and emerging vulnerabilities with confidence scoring and severity classification.",
+      features: [
+        "Dynamic RAG: Live exploit ingestion pipeline — detects emerging vulnerabilities post-training cutoff",
+        "Multi-Agent Team: Four specialized agents (PM, Auditor, Solidity Expert, Counselor) challenge each other's findings",
+        "Degeneration-of-Thought Prevention: Role-reversal in Phase 2 forces independent re-evaluation, eliminating confirmation bias",
+      ],
+      architecture: [
+        "Ingestion Layer: Etherscan API + Forta Network + DeFiHackLabs → embedding pipeline → pgvector/Pinecone",
+        "3-Phase Audit Loop: Contract analysis → vulnerability identification (Slither + Mythril) → counselor validation",
+        "Diff Detector: Flags vulnerabilities matching newly-added exploits not present in static training data",
+      ],
+    },
+  },
+  {
+    id: 6,
     title: "n8n Automation & Slack Bots",
     category: "Automation",
     summary:
@@ -241,7 +274,7 @@ const projects: Project[] = [
     page: "/n8n",
   },
   {
-    id: 5,
+    id: 7,
     title: "Production Infrastructure Management",
     category: "DevOps",
     summary:
@@ -278,7 +311,7 @@ const projects: Project[] = [
     page: "/infrastructure",
   },
   {
-    id: 6,
+    id: 8,
     title: "Standalone Error Handling Package",
     category: "Library",
     summary:
@@ -311,7 +344,7 @@ const projects: Project[] = [
     page: "/error-package",
   },
   {
-    id: 7,
+    id: 9,
     title: "NoteWiz - AI Education Platform",
     category: "EdTech",
     summary:
