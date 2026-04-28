@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
 import Galaxy from "../components/ui/Galaxy";
 import Particles from "../components/ui/Particles";
 import { poppins } from "@/lib/fonts";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Aaqeb's Portfolio",
@@ -22,6 +21,7 @@ export default function RootLayout({
         className={poppins.className}
         style={{ backgroundColor: "black", overflowX: "hidden" }}
       >
+        <Analytics />
         <div className="">{children}</div>
       </body>
     </html>
